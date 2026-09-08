@@ -159,3 +159,17 @@ form.fb button[type=submit][disabled]{opacity:.55;cursor:default}
 .formmsg{margin:16px 0 0;padding:15px 18px;border-radius:11px;font-size:16.5px;display:none}
 .formmsg.ok{display:block;background:#EAF6F2;border:1.5px solid #7FC0AD;color:#12503F}
 .formmsg.err{display:block;background:#FDECEC;border:1.5px solid #E0A0A0;color:#8A2626}
+
+/* ---------- shared contact block ---------- */
+.contact dl{margin:12px 0 0;display:grid;grid-template-columns:1fr;gap:0}
+.contact dt{font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:#9FBBE4;font-weight:700;margin-top:14px}
+.contact dt:first-of-type{margin-top:0}
+.contact dd{margin:3px 0 0;font-size:17px;color:#fff}
+.contact dd a{color:#fff;font-weight:700}
+.contact .small{display:block;font-size:14.5px;color:#C0D2EC;font-weight:400;margin-top:2px}
+.contact .urgent{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.22)}
+@media print{
+  .contact dt{color:#333}
+  .contact dd,.contact dd a,.contact .small{color:#000}
+  .contact .urgent{border-top-color:#999}
+}
