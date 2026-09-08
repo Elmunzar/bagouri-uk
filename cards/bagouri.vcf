@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Bagouri;Elmunzar;;;
+FN:[display name]
+TITLE:[job title]
+ORG:[hospitals]
+TEL;TYPE=WORK,VOICE:01924 543584
+TEL;TYPE=WORK,VOICE:01977 518518
+EMAIL;TYPE=WORK,INTERNET:enquiries@bagouri.uk
+URL:https://bagouri.uk
+NOTE:Prehabilitation guides for patients: https://bagouri.uk/prehab/
+END:VCARD

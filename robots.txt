@@ -3,4 +3,5 @@ Allow: /
 Disallow: /admin/
 Disallow: /feedback/
 Disallow: /scan/
+Disallow: /cards/
 Sitemap: https://bagouri.uk/sitemap.xml
