@@ -1,0 +1,15 @@
+name = "bagouri-feedback"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+routes = [{ pattern = "feedback.bagouri.uk", custom_domain = true }]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bagouri-feedback"
+database_id = "PASTE_AFTER_CREATE"
+
+# Rate limiting. Optional - remove this block and the worker still works.
+[[kv_namespaces]]
+binding = "RATE"
+id = "PASTE_AFTER_CREATE"

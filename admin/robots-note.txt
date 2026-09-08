@@ -1,0 +1,2 @@
+Files in /admin/ are working documents, not patient-facing pages.
+They are noindex and are not linked from anywhere on the site.

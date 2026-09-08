@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tell us what you think of these pages</title>
+<meta name="description" content="Help improve the patient information on this site. Anonymous, takes under a minute.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#13264A">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="backbar">
+  <div class="wrap"><a href="/prehab/">← All guides</a></div>
+</nav>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="brand">Your feedback</span>
+    <h1>Tell us what you think of these pages</h1>
+    <p>Anonymous · takes under a minute</p>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+
+  <div class="callout warn">
+    <p><strong>This form is about the information on this website — not about your care.</strong></p>
+    <p>It is not checked every day, and no one will reply to you here. Please <strong>do not</strong> use it to ask a medical question, report a problem with your treatment, or make a complaint. For those, see the box at the bottom of this page.</p>
+    <p><strong>Please do not type your name, date of birth, NHS number, or any detail that could identify you.</strong></p>
+  </div>
+
+  <form class="fb" id="fbform" novalidate>
+    <input type="hidden" name="page" id="pagefield" value="general">
+    <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+
+    <fieldset>
+      <legend>Did these pages help you prepare for your operation?</legend>
+      <div class="radios">
+        <label><input type="radio" name="helpful" value="yes"><span>Yes, they helped</span></label>
+        <label><input type="radio" name="helpful" value="partly"><span>Partly</span></label>
+        <label><input type="radio" name="helpful" value="no"><span>No, not really</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Was anything confusing or missing?</legend>
+      <p class="hint">For example, a word that wasn't explained, or a question you still have.</p>
+      <textarea name="confusing" maxlength="1500" data-count></textarea>
+      <p class="count"><span>0</span>/1500</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Is there other information you would find useful?</legend>
+      <p class="hint">Anything you wish you had been told before your operation.</p>
+      <textarea name="suggestion" maxlength="1500" data-count></textarea>
+      <p class="count"><span>0</span>/1500</p>
+    </fieldset>
+
+    <button type="submit">Send feedback</button>
+    <p class="formmsg" id="fbmsg" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="callout">
+    <p><strong>If this is about your care, please use the right route — you will get a much faster answer.</strong></p>
+    <ul>
+      <li><strong>A medical question, or something has changed:</strong> contact the team on <a href="tel:01977747391">01977&nbsp;747391</a>, or your GP.</li>
+      <li><strong>Urgent, or you feel unwell:</strong> NHS&nbsp;111. In an emergency, 999.</li>
+      <li><strong>A concern or complaint about your care:</strong> contact the hospital's PALS team — they are independent of the clinical team and there to help.</li>
+      <li><strong>Public feedback about NHS care:</strong> the NHS website, or Care Opinion.</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>We keep only what you type in the boxes above, so that we can improve these pages. We do not collect your name, your IP address, or anything that identifies you, and we do not use cookies or analytics.</p>
+    <p><a href="/prehab/">Back to the guides</a></p>
+  </div>
+</footer>
+
+<script src="/assets/app.js" defer></script>
+<script src="/assets/feedback.js" defer></script>
+</body>
+</html>

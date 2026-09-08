@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prehab QR card — print</title>
+<style>
+  :root{--navy:#13264A;--line:#DCE3EC;--muted:#4A5568}
+  *{box-sizing:border-box}
+  body{margin:0;background:#EEF1F6;font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#16202E}
+  .sheet{width:210mm;min-height:297mm;margin:0 auto;background:#fff;padding:14mm;display:grid;grid-template-columns:1fr 1fr;gap:8mm;align-content:start}
+  .card{border:1.2px dashed #9AA7B8;border-radius:6mm;padding:9mm 8mm;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:86mm}
+  .card h2{margin:0 0 1mm;font-size:15pt;color:var(--navy);line-height:1.25}
+  .card .sub{margin:0 0 4mm;font-size:10.5pt;color:var(--muted)}
+  .card img{width:44mm;height:44mm;display:block}
+  .card .url{margin-top:3mm;font-size:9.5pt;color:var(--muted);word-break:break-all}
+  .card .how{margin-top:2mm;font-size:9pt;color:var(--muted)}
+  .note{grid-column:1/-1;font-size:10pt;color:var(--muted);text-align:center}
+  @media print{body{background:#fff}.sheet{margin:0;padding:10mm;width:auto;min-height:0}.note{display:none}}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card">
+    <h2>Preparing for your joint replacement</h2>
+    <p class="sub">All guides — hip &amp; knee</p>
+    <img src="prehab-hub.png" alt="QR code to bagouri.uk/prehab">
+    <p class="url">bagouri.uk/prehab</p>
+    <p class="how">Point your phone camera at the code.</p>
+  </div>
+  <div class="card">
+    <h2>Total Hip Replacement</h2>
+    <p class="sub">Prehabilitation</p>
+    <img src="prehab-hip.png" alt="QR code to the hip prehabilitation guide">
+    <p class="url">bagouri.uk/prehab/hip</p>
+    <p class="how">Point your phone camera at the code.</p>
+  </div>
+  <div class="card">
+    <h2>Total Knee Replacement</h2>
+    <p class="sub">Prehabilitation</p>
+    <img src="prehab-knee.png" alt="QR code to the knee prehabilitation guide">
+    <p class="url">bagouri.uk/prehab/knee</p>
+    <p class="how">Point your phone camera at the code.</p>
+  </div>
+  <div class="card">
+    <h2>Total Hip Replacement</h2>
+    <p class="sub">Muscle-sparing (direct anterior) approach</p>
+    <img src="prehab-hip-anterior.png" alt="QR code to the muscle-sparing hip guide">
+    <p class="url">bagouri.uk/prehab/hip-muscle-sparing</p>
+    <p class="how">Point your phone camera at the code.</p>
+  </div>
+  <p class="note">Print at A4, 100% scale. Cut along the dashed lines. QR codes use high error correction, so they still scan if creased or slightly marked.</p>
+</div>
+</body>
+</html>
