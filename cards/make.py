@@ -73,11 +73,17 @@ def build_vcard():
         f"FN:{field('display_name')}",
         f"TITLE:{field('job_title')}",
         f"ORG:{org}",
-        f"TEL;TYPE=WORK,VOICE:{CONFIG['secretary_tel']}",
-        f"TEL;TYPE=WORK,VOICE:{CONFIG['private_tel']}",
+        # Two work numbers save as indistinguishable entries unless labelled.
+        # PREF marks the NHS secretary as the default; X-ABLabel names each one
+        # in Apple Contacts, and the NOTE repeats both for everything else.
+        f"TEL;TYPE=WORK,VOICE;PREF=1:{CONFIG['secretary_tel']}",
+        f"item1.TEL;TYPE=WORK,VOICE:{CONFIG['private_tel']}",
+        "item1.X-ABLabel:Private (Spire Methley Park)",
         f"EMAIL;TYPE=WORK,INTERNET:{CONFIG['email']}",
         f"URL:https://{CONFIG['website']}",
-        f"NOTE:Prehabilitation guides for patients: {CONFIG['prehab_url']}",
+        (f"NOTE:NHS secretary ({CONFIG['secretary_name']}) {CONFIG['secretary_tel']}. "
+         f"Private (Spire Methley Park) {CONFIG['private_tel']}. "
+         f"Prehabilitation guides for patients: {CONFIG['prehab_url']}"),
         "END:VCARD",
     ]
     # vCard requires CRLF line endings; some Android importers reject LF-only.
