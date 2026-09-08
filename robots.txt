@@ -2,4 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /feedback/
+Disallow: /scan/
 Sitemap: https://bagouri.uk/sitemap.xml

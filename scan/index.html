@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Scan for your prehabilitation guide</title>
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<style>
+  /* Display page. Meant to be opened on a consultation-room screen and shown
+     to the patient, who scans it with their own phone. Deliberately white
+     regardless of the viewer's dark-mode setting: a dark background makes
+     a QR code much harder for a phone camera to lock onto through screen glare. */
+  :root{ color-scheme: light; }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;background:#fff;color:#13264A;
+    font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    display:flex;align-items:center;justify-content:center;padding:4vmin;
+  }
+  .stage{text-align:center;max-width:min(92vw,1100px)}
+  .kicker{
+    margin:0 0 1.2vmin;font-size:clamp(13px,1.7vmin,22px);font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:#0E7C7B;
+  }
+  h1{
+    margin:0 0 3.2vmin;font-weight:700;line-height:1.15;
+    font-size:clamp(22px,4.6vmin,58px);
+  }
+  .code{
+    width:min(56vmin,520px);height:min(56vmin,520px);
+    margin:0 auto;display:block;
+  }
+  .url{
+    margin:3vmin 0 0;font-weight:700;line-height:1.1;
+    font-size:clamp(20px,4.2vmin,52px);letter-spacing:.01em;
+  }
+  .how{
+    margin:1.6vmin 0 0;color:#4A5568;
+    font-size:clamp(14px,2.1vmin,26px);
+  }
+  /* Short screens (a laptop turned to the patient) — shrink the code, not the text. */
+  @media (max-height:520px){
+    .code{width:min(42vmin,320px);height:min(42vmin,320px)}
+    h1{margin-bottom:2vmin}
+  }
+  @media print{ .how{color:#000} }
+</style>
+</head>
+<body>
+  <main class="stage">
+    <p class="kicker">Preparing for surgery</p>
+    <h1>Your joint replacement</h1>
+
+    <img class="code" src="/qr/prehab-hub.svg"
+         alt="QR code linking to bagouri.uk/prehab">
+
+    <p class="url">bagouri.uk/prehab</p>
+    <p class="how">Point your phone camera at the code, or type the address above.</p>
+  </main>
+</body>
+</html>
