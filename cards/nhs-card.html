@@ -9,21 +9,26 @@
   /* ---------------------------------------------------------------------
      NHS patient card, 85 x 55 mm, 10 per A4, double sided.
      Sheet 1 = fronts, sheet 2 = backs. All ten cards are identical, so
-     front-to-back alignment does not depend on which edge you flip on.
+     front-to-back registration does not depend on which edge you flip on.
 
-     Palette sampled from EB's existing printed card so the two sit
-     together rather than clashing: oxblood ink on warm paper.
+     CONTENT IS TAKEN VERBATIM from EB's existing NHS card
+     (~/Documents/Work:job:admin/NHS card/Mr Bagouri patient card & QR code.pptx).
+     Nothing has been added. The ONLY change is the QR code itself: the
+     original pointed at a paid redirect service that has since lapsed, so
+     it is replaced with a self-hosted code for https://bagouri.uk/prehab/.
 
-     No NHS logo or NHS Blue is used. The NHS identity is licensed and
-     needs trust permission; this is a personal card that happens to be
-     for NHS patients, which is a different thing.
+     Do NOT add section headings, a physiotherapy direct line, PKB, or
+     111/999 wording. None of those are on his card, and he has asked for
+     the card's own content only. The private card is a different card.
+
+     No NHS logo or NHS Blue: that identity is licensed and needs trust
+     permission.
      --------------------------------------------------------------------- */
   :root{
     --paper:#FCF7F4;
-    --ox:#4C1D0F;        /* deep monogram oxblood */
-    --ox-mid:#6B2B18;    /* rules and accents */
+    --ox:#4C1D0F;
+    --ox-mid:#6B2B18;
     --ink:#2B2B2B;
-    --muted:#6A5F5A;
     --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
@@ -39,59 +44,29 @@
   .card{
     width:85mm;height:55mm;background:var(--paper);
     outline:.3pt dashed #C9BEB8;outline-offset:-.15pt;
-    padding:5.5mm 6mm;overflow:hidden;position:relative;
+    padding:4.2mm 4.8mm;overflow:hidden;
   }
 
   /* ---------------- front ---------------- */
   .front{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-  .front .mark{height:12mm;width:auto;display:block;margin-bottom:2.4mm}
-  .front .name{
-    font-family:var(--serif);font-size:13pt;line-height:1.1;
-    color:var(--ox);margin:0;letter-spacing:.01em;
-  }
-  .front .pn{
-    font-family:var(--serif);font-size:7.6pt;color:var(--ink);
-    margin:1.5mm 0 0;letter-spacing:.02em;
-  }
-  .front .rule{width:26mm;height:.5pt;background:var(--ox-mid);opacity:.55;margin:2.6mm 0}
-  .front .role{
-    font-family:var(--serif);font-size:8.4pt;line-height:1.25;color:var(--ink);
-    margin:0;max-width:66mm;
-  }
+  .front .name{font-family:var(--serif);font-size:14pt;line-height:1.1;color:var(--ox);margin:0}
+  .front .pn{font-family:var(--serif);font-size:8.2pt;color:var(--ink);margin:2mm 0 0;letter-spacing:.03em}
+  .front .rule{width:30mm;height:.5pt;background:var(--ox-mid);opacity:.5;margin:3.2mm 0}
+  .front .role{font-family:var(--serif);font-size:9pt;line-height:1.25;color:var(--ink);margin:0}
 
   /* ---------------- back ---------------- */
-  .back{display:flex;gap:4.5mm;align-items:stretch}
-  .back .details{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
-  .back .eyebrow{
-    font-family:var(--sans);font-size:6.2pt;font-weight:700;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--ox-mid);margin:0 0 1.6mm;
-  }
-  .back dl{margin:0}
-  .back dt{
-    font-size:6.1pt;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
-    color:var(--muted);margin:0 0 .3mm;
-  }
-  .back dd{margin:0 0 2.1mm;font-size:7.4pt;line-height:1.32;color:var(--ink)}
-  .back dd .tel{font-weight:700;font-size:8pt;letter-spacing:.01em}
-  .back dd .em{font-size:6.9pt;color:var(--ink)}
-  .back .foot{
-    margin-top:auto;font-size:6.1pt;color:var(--muted);line-height:1.3;
-  }
-
-  .back .scan{
-    width:25mm;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    border-left:.4pt solid rgba(107,43,24,.28);padding-left:4mm;
-  }
+  .back{display:flex;gap:3.4mm;align-items:center}
+  .back .scan{width:23mm;flex:none}
   .back .scan img{width:23mm;height:23mm;display:block}
-  .back .scan .cap{
-    margin:1.6mm 0 0;font-family:var(--serif);font-size:6.6pt;line-height:1.25;
-    text-align:center;color:var(--ox);font-weight:700;
-  }
-  .back .scan .url{margin:.7mm 0 0;font-size:6.3pt;font-weight:700;color:var(--ink);text-align:center}
+  .back .details{flex:1;min-width:0}
+  .back .sec{font-family:var(--serif);font-size:7.8pt;font-weight:700;color:var(--ox);margin:0 0 .7mm}
+  .back .lede{font-size:5.8pt;line-height:1.27;margin:0 0 .9mm}
+  .back .kv{font-size:6.6pt;line-height:1.38;margin:0}
+  .back .kv b{font-weight:700}
+  .back .div{height:.4pt;background:rgba(107,43,24,.25);margin:1.2mm 0}
+  .back .note{font-size:5.8pt;line-height:1.27;margin:0}
 
-  .sheetnote{
-    max-width:210mm;margin:0 auto 4mm;padding:0 20mm;font-size:11px;color:#5A5048;
-  }
+  .sheetnote{max-width:210mm;margin:0 auto 4mm;padding:0 20mm;font-size:11px;color:#5A5048}
   @media print{
     body{background:#fff}
     .sheetnote{display:none}
@@ -106,333 +81,221 @@
 <p class="sheetnote">
   <strong>Print at 100% / "Actual size", double-sided.</strong> Sheet 1 is the fronts, sheet 2 the backs.
   All ten cards are identical, so it does not matter which edge your printer flips on.
-  Cut on the dashed lines. Best on 300&ndash;350gsm uncoated warm white.
+  Cut on the dashed lines.
 </p>
 
-<!-- ============================ FRONTS ============================ -->
-<div class="sheet">
+<div class="sheet" id="fronts">
   <div class="card front">
-    <img class="mark" src="be-monogram.png" alt="">
     <p class="name">Mr Elmunzar Bagouri</p>
-    <p class="pn">MBBS, CCT, MBA, FRCS (Tr&amp;Orth)</p>
+    <p class="pn">MBBS, CCT, MBA, FRCS</p>
     <div class="rule"></div>
-    <p class="role">Consultant Trauma and<br>Lower Limb Arthroplasty Surgeon</p>
+    <p class="role">Trauma and Lower Limb<br>Arthroplasty Surgeon</p>
   </div>
   <div class="card front">
-    <img class="mark" src="be-monogram.png" alt="">
     <p class="name">Mr Elmunzar Bagouri</p>
-    <p class="pn">MBBS, CCT, MBA, FRCS (Tr&amp;Orth)</p>
+    <p class="pn">MBBS, CCT, MBA, FRCS</p>
     <div class="rule"></div>
-    <p class="role">Consultant Trauma and<br>Lower Limb Arthroplasty Surgeon</p>
+    <p class="role">Trauma and Lower Limb<br>Arthroplasty Surgeon</p>
   </div>
   <div class="card front">
-    <img class="mark" src="be-monogram.png" alt="">
     <p class="name">Mr Elmunzar Bagouri</p>
-    <p class="pn">MBBS, CCT, MBA, FRCS (Tr&amp;Orth)</p>
+    <p class="pn">MBBS, CCT, MBA, FRCS</p>
     <div class="rule"></div>
-    <p class="role">Consultant Trauma and<br>Lower Limb Arthroplasty Surgeon</p>
+    <p class="role">Trauma and Lower Limb<br>Arthroplasty Surgeon</p>
   </div>
   <div class="card front">
-    <img class="mark" src="be-monogram.png" alt="">
     <p class="name">Mr Elmunzar Bagouri</p>
-    <p class="pn">MBBS, CCT, MBA, FRCS (Tr&amp;Orth)</p>
+    <p class="pn">MBBS, CCT, MBA, FRCS</p>
     <div class="rule"></div>
-    <p class="role">Consultant Trauma and<br>Lower Limb Arthroplasty Surgeon</p>
+    <p class="role">Trauma and Lower Limb<br>Arthroplasty Surgeon</p>
   </div>
   <div class="card front">
-    <img class="mark" src="be-monogram.png" alt="">
     <p class="name">Mr Elmunzar Bagouri</p>
-    <p class="pn">MBBS, CCT, MBA, FRCS (Tr&amp;Orth)</p>
+    <p class="pn">MBBS, CCT, MBA, FRCS</p>
     <div class="rule"></div>
-    <p class="role">Consultant Trauma and<br>Lower Limb Arthroplasty Surgeon</p>
+    <p class="role">Trauma and Lower Limb<br>Arthroplasty Surgeon</p>
   </div>
   <div class="card front">
-    <img class="mark" src="be-monogram.png" alt="">
     <p class="name">Mr Elmunzar Bagouri</p>
-    <p class="pn">MBBS, CCT, MBA, FRCS (Tr&amp;Orth)</p>
+    <p class="pn">MBBS, CCT, MBA, FRCS</p>
     <div class="rule"></div>
-    <p class="role">Consultant Trauma and<br>Lower Limb Arthroplasty Surgeon</p>
+    <p class="role">Trauma and Lower Limb<br>Arthroplasty Surgeon</p>
   </div>
   <div class="card front">
-    <img class="mark" src="be-monogram.png" alt="">
     <p class="name">Mr Elmunzar Bagouri</p>
-    <p class="pn">MBBS, CCT, MBA, FRCS (Tr&amp;Orth)</p>
+    <p class="pn">MBBS, CCT, MBA, FRCS</p>
     <div class="rule"></div>
-    <p class="role">Consultant Trauma and<br>Lower Limb Arthroplasty Surgeon</p>
+    <p class="role">Trauma and Lower Limb<br>Arthroplasty Surgeon</p>
   </div>
   <div class="card front">
-    <img class="mark" src="be-monogram.png" alt="">
     <p class="name">Mr Elmunzar Bagouri</p>
-    <p class="pn">MBBS, CCT, MBA, FRCS (Tr&amp;Orth)</p>
+    <p class="pn">MBBS, CCT, MBA, FRCS</p>
     <div class="rule"></div>
-    <p class="role">Consultant Trauma and<br>Lower Limb Arthroplasty Surgeon</p>
+    <p class="role">Trauma and Lower Limb<br>Arthroplasty Surgeon</p>
   </div>
   <div class="card front">
-    <img class="mark" src="be-monogram.png" alt="">
     <p class="name">Mr Elmunzar Bagouri</p>
-    <p class="pn">MBBS, CCT, MBA, FRCS (Tr&amp;Orth)</p>
+    <p class="pn">MBBS, CCT, MBA, FRCS</p>
     <div class="rule"></div>
-    <p class="role">Consultant Trauma and<br>Lower Limb Arthroplasty Surgeon</p>
+    <p class="role">Trauma and Lower Limb<br>Arthroplasty Surgeon</p>
   </div>
   <div class="card front">
-    <img class="mark" src="be-monogram.png" alt="">
     <p class="name">Mr Elmunzar Bagouri</p>
-    <p class="pn">MBBS, CCT, MBA, FRCS (Tr&amp;Orth)</p>
+    <p class="pn">MBBS, CCT, MBA, FRCS</p>
     <div class="rule"></div>
-    <p class="role">Consultant Trauma and<br>Lower Limb Arthroplasty Surgeon</p>
+    <p class="role">Trauma and Lower Limb<br>Arthroplasty Surgeon</p>
   </div>
 </div>
 
-<!-- ============================ BACKS ============================= -->
-<div class="sheet">
+<div class="sheet" id="backs">
   <div class="card back">
-    <div class="details">
-      <p class="eyebrow">NHS patients</p>
-      <dl>
-        <dt>Appointments &amp; admission</dt>
-        <dd>
-          Evy Sennett, secretary<br>
-          <span class="tel">01924 543584</span><br>
-          <span class="em">evy.sennett@nhs.net</span>
-        </dd>
-        <dt>Exercises &amp; prehab</dt>
-        <dd>
-          Physiotherapy &middot; <span class="tel">01977 747391</span><br>
-          <span class="em">or message the team through PKB</span>
-        </dd>
-      </dl>
-      <p class="foot">If you are unwell or worried, contact your GP or NHS&nbsp;111.<br>In an emergency, call 999.</p>
-    </div>
-
     <div class="scan">
       <img src="../qr/prehab-hub-oxblood.svg" alt="QR code to bagouri.uk/prehab">
-      <p class="cap">Preparing for<br>your operation</p>
-      <p class="url">bagouri.uk/prehab</p>
+    </div>
+    <div class="details">
+      <p class="sec">Miss Evy Sennett</p>
+      <p class="lede">For any questions or queries regarding your appointment or procedure at Mid Yorks NHS Trust</p>
+      <p class="kv"><b>Email:</b> evy.sennett@nhs.net</p>
+      <p class="kv"><b>Tel:</b> 01924 543584</p>
+      <div class="div"></div>
+      <p class="note">For radiology, physiotherapy and waiting list queries, please contact the appropriate department via the hospital switchboard on: <b>01924 541169</b></p>
+      <div class="div"></div>
+      <p class="note">For the pre-habilitation program and information about your procedure, please scan the QR code on the left with your smartphone camera &amp; click on the link.</p>
     </div>
   </div>
   <div class="card back">
-    <div class="details">
-      <p class="eyebrow">NHS patients</p>
-      <dl>
-        <dt>Appointments &amp; admission</dt>
-        <dd>
-          Evy Sennett, secretary<br>
-          <span class="tel">01924 543584</span><br>
-          <span class="em">evy.sennett@nhs.net</span>
-        </dd>
-        <dt>Exercises &amp; prehab</dt>
-        <dd>
-          Physiotherapy &middot; <span class="tel">01977 747391</span><br>
-          <span class="em">or message the team through PKB</span>
-        </dd>
-      </dl>
-      <p class="foot">If you are unwell or worried, contact your GP or NHS&nbsp;111.<br>In an emergency, call 999.</p>
-    </div>
-
     <div class="scan">
       <img src="../qr/prehab-hub-oxblood.svg" alt="QR code to bagouri.uk/prehab">
-      <p class="cap">Preparing for<br>your operation</p>
-      <p class="url">bagouri.uk/prehab</p>
+    </div>
+    <div class="details">
+      <p class="sec">Miss Evy Sennett</p>
+      <p class="lede">For any questions or queries regarding your appointment or procedure at Mid Yorks NHS Trust</p>
+      <p class="kv"><b>Email:</b> evy.sennett@nhs.net</p>
+      <p class="kv"><b>Tel:</b> 01924 543584</p>
+      <div class="div"></div>
+      <p class="note">For radiology, physiotherapy and waiting list queries, please contact the appropriate department via the hospital switchboard on: <b>01924 541169</b></p>
+      <div class="div"></div>
+      <p class="note">For the pre-habilitation program and information about your procedure, please scan the QR code on the left with your smartphone camera &amp; click on the link.</p>
     </div>
   </div>
   <div class="card back">
-    <div class="details">
-      <p class="eyebrow">NHS patients</p>
-      <dl>
-        <dt>Appointments &amp; admission</dt>
-        <dd>
-          Evy Sennett, secretary<br>
-          <span class="tel">01924 543584</span><br>
-          <span class="em">evy.sennett@nhs.net</span>
-        </dd>
-        <dt>Exercises &amp; prehab</dt>
-        <dd>
-          Physiotherapy &middot; <span class="tel">01977 747391</span><br>
-          <span class="em">or message the team through PKB</span>
-        </dd>
-      </dl>
-      <p class="foot">If you are unwell or worried, contact your GP or NHS&nbsp;111.<br>In an emergency, call 999.</p>
-    </div>
-
     <div class="scan">
       <img src="../qr/prehab-hub-oxblood.svg" alt="QR code to bagouri.uk/prehab">
-      <p class="cap">Preparing for<br>your operation</p>
-      <p class="url">bagouri.uk/prehab</p>
+    </div>
+    <div class="details">
+      <p class="sec">Miss Evy Sennett</p>
+      <p class="lede">For any questions or queries regarding your appointment or procedure at Mid Yorks NHS Trust</p>
+      <p class="kv"><b>Email:</b> evy.sennett@nhs.net</p>
+      <p class="kv"><b>Tel:</b> 01924 543584</p>
+      <div class="div"></div>
+      <p class="note">For radiology, physiotherapy and waiting list queries, please contact the appropriate department via the hospital switchboard on: <b>01924 541169</b></p>
+      <div class="div"></div>
+      <p class="note">For the pre-habilitation program and information about your procedure, please scan the QR code on the left with your smartphone camera &amp; click on the link.</p>
     </div>
   </div>
   <div class="card back">
-    <div class="details">
-      <p class="eyebrow">NHS patients</p>
-      <dl>
-        <dt>Appointments &amp; admission</dt>
-        <dd>
-          Evy Sennett, secretary<br>
-          <span class="tel">01924 543584</span><br>
-          <span class="em">evy.sennett@nhs.net</span>
-        </dd>
-        <dt>Exercises &amp; prehab</dt>
-        <dd>
-          Physiotherapy &middot; <span class="tel">01977 747391</span><br>
-          <span class="em">or message the team through PKB</span>
-        </dd>
-      </dl>
-      <p class="foot">If you are unwell or worried, contact your GP or NHS&nbsp;111.<br>In an emergency, call 999.</p>
-    </div>
-
     <div class="scan">
       <img src="../qr/prehab-hub-oxblood.svg" alt="QR code to bagouri.uk/prehab">
-      <p class="cap">Preparing for<br>your operation</p>
-      <p class="url">bagouri.uk/prehab</p>
+    </div>
+    <div class="details">
+      <p class="sec">Miss Evy Sennett</p>
+      <p class="lede">For any questions or queries regarding your appointment or procedure at Mid Yorks NHS Trust</p>
+      <p class="kv"><b>Email:</b> evy.sennett@nhs.net</p>
+      <p class="kv"><b>Tel:</b> 01924 543584</p>
+      <div class="div"></div>
+      <p class="note">For radiology, physiotherapy and waiting list queries, please contact the appropriate department via the hospital switchboard on: <b>01924 541169</b></p>
+      <div class="div"></div>
+      <p class="note">For the pre-habilitation program and information about your procedure, please scan the QR code on the left with your smartphone camera &amp; click on the link.</p>
     </div>
   </div>
   <div class="card back">
-    <div class="details">
-      <p class="eyebrow">NHS patients</p>
-      <dl>
-        <dt>Appointments &amp; admission</dt>
-        <dd>
-          Evy Sennett, secretary<br>
-          <span class="tel">01924 543584</span><br>
-          <span class="em">evy.sennett@nhs.net</span>
-        </dd>
-        <dt>Exercises &amp; prehab</dt>
-        <dd>
-          Physiotherapy &middot; <span class="tel">01977 747391</span><br>
-          <span class="em">or message the team through PKB</span>
-        </dd>
-      </dl>
-      <p class="foot">If you are unwell or worried, contact your GP or NHS&nbsp;111.<br>In an emergency, call 999.</p>
-    </div>
-
     <div class="scan">
       <img src="../qr/prehab-hub-oxblood.svg" alt="QR code to bagouri.uk/prehab">
-      <p class="cap">Preparing for<br>your operation</p>
-      <p class="url">bagouri.uk/prehab</p>
+    </div>
+    <div class="details">
+      <p class="sec">Miss Evy Sennett</p>
+      <p class="lede">For any questions or queries regarding your appointment or procedure at Mid Yorks NHS Trust</p>
+      <p class="kv"><b>Email:</b> evy.sennett@nhs.net</p>
+      <p class="kv"><b>Tel:</b> 01924 543584</p>
+      <div class="div"></div>
+      <p class="note">For radiology, physiotherapy and waiting list queries, please contact the appropriate department via the hospital switchboard on: <b>01924 541169</b></p>
+      <div class="div"></div>
+      <p class="note">For the pre-habilitation program and information about your procedure, please scan the QR code on the left with your smartphone camera &amp; click on the link.</p>
     </div>
   </div>
   <div class="card back">
-    <div class="details">
-      <p class="eyebrow">NHS patients</p>
-      <dl>
-        <dt>Appointments &amp; admission</dt>
-        <dd>
-          Evy Sennett, secretary<br>
-          <span class="tel">01924 543584</span><br>
-          <span class="em">evy.sennett@nhs.net</span>
-        </dd>
-        <dt>Exercises &amp; prehab</dt>
-        <dd>
-          Physiotherapy &middot; <span class="tel">01977 747391</span><br>
-          <span class="em">or message the team through PKB</span>
-        </dd>
-      </dl>
-      <p class="foot">If you are unwell or worried, contact your GP or NHS&nbsp;111.<br>In an emergency, call 999.</p>
-    </div>
-
     <div class="scan">
       <img src="../qr/prehab-hub-oxblood.svg" alt="QR code to bagouri.uk/prehab">
-      <p class="cap">Preparing for<br>your operation</p>
-      <p class="url">bagouri.uk/prehab</p>
+    </div>
+    <div class="details">
+      <p class="sec">Miss Evy Sennett</p>
+      <p class="lede">For any questions or queries regarding your appointment or procedure at Mid Yorks NHS Trust</p>
+      <p class="kv"><b>Email:</b> evy.sennett@nhs.net</p>
+      <p class="kv"><b>Tel:</b> 01924 543584</p>
+      <div class="div"></div>
+      <p class="note">For radiology, physiotherapy and waiting list queries, please contact the appropriate department via the hospital switchboard on: <b>01924 541169</b></p>
+      <div class="div"></div>
+      <p class="note">For the pre-habilitation program and information about your procedure, please scan the QR code on the left with your smartphone camera &amp; click on the link.</p>
     </div>
   </div>
   <div class="card back">
-    <div class="details">
-      <p class="eyebrow">NHS patients</p>
-      <dl>
-        <dt>Appointments &amp; admission</dt>
-        <dd>
-          Evy Sennett, secretary<br>
-          <span class="tel">01924 543584</span><br>
-          <span class="em">evy.sennett@nhs.net</span>
-        </dd>
-        <dt>Exercises &amp; prehab</dt>
-        <dd>
-          Physiotherapy &middot; <span class="tel">01977 747391</span><br>
-          <span class="em">or message the team through PKB</span>
-        </dd>
-      </dl>
-      <p class="foot">If you are unwell or worried, contact your GP or NHS&nbsp;111.<br>In an emergency, call 999.</p>
-    </div>
-
     <div class="scan">
       <img src="../qr/prehab-hub-oxblood.svg" alt="QR code to bagouri.uk/prehab">
-      <p class="cap">Preparing for<br>your operation</p>
-      <p class="url">bagouri.uk/prehab</p>
+    </div>
+    <div class="details">
+      <p class="sec">Miss Evy Sennett</p>
+      <p class="lede">For any questions or queries regarding your appointment or procedure at Mid Yorks NHS Trust</p>
+      <p class="kv"><b>Email:</b> evy.sennett@nhs.net</p>
+      <p class="kv"><b>Tel:</b> 01924 543584</p>
+      <div class="div"></div>
+      <p class="note">For radiology, physiotherapy and waiting list queries, please contact the appropriate department via the hospital switchboard on: <b>01924 541169</b></p>
+      <div class="div"></div>
+      <p class="note">For the pre-habilitation program and information about your procedure, please scan the QR code on the left with your smartphone camera &amp; click on the link.</p>
     </div>
   </div>
   <div class="card back">
-    <div class="details">
-      <p class="eyebrow">NHS patients</p>
-      <dl>
-        <dt>Appointments &amp; admission</dt>
-        <dd>
-          Evy Sennett, secretary<br>
-          <span class="tel">01924 543584</span><br>
-          <span class="em">evy.sennett@nhs.net</span>
-        </dd>
-        <dt>Exercises &amp; prehab</dt>
-        <dd>
-          Physiotherapy &middot; <span class="tel">01977 747391</span><br>
-          <span class="em">or message the team through PKB</span>
-        </dd>
-      </dl>
-      <p class="foot">If you are unwell or worried, contact your GP or NHS&nbsp;111.<br>In an emergency, call 999.</p>
-    </div>
-
     <div class="scan">
       <img src="../qr/prehab-hub-oxblood.svg" alt="QR code to bagouri.uk/prehab">
-      <p class="cap">Preparing for<br>your operation</p>
-      <p class="url">bagouri.uk/prehab</p>
+    </div>
+    <div class="details">
+      <p class="sec">Miss Evy Sennett</p>
+      <p class="lede">For any questions or queries regarding your appointment or procedure at Mid Yorks NHS Trust</p>
+      <p class="kv"><b>Email:</b> evy.sennett@nhs.net</p>
+      <p class="kv"><b>Tel:</b> 01924 543584</p>
+      <div class="div"></div>
+      <p class="note">For radiology, physiotherapy and waiting list queries, please contact the appropriate department via the hospital switchboard on: <b>01924 541169</b></p>
+      <div class="div"></div>
+      <p class="note">For the pre-habilitation program and information about your procedure, please scan the QR code on the left with your smartphone camera &amp; click on the link.</p>
     </div>
   </div>
   <div class="card back">
-    <div class="details">
-      <p class="eyebrow">NHS patients</p>
-      <dl>
-        <dt>Appointments &amp; admission</dt>
-        <dd>
-          Evy Sennett, secretary<br>
-          <span class="tel">01924 543584</span><br>
-          <span class="em">evy.sennett@nhs.net</span>
-        </dd>
-        <dt>Exercises &amp; prehab</dt>
-        <dd>
-          Physiotherapy &middot; <span class="tel">01977 747391</span><br>
-          <span class="em">or message the team through PKB</span>
-        </dd>
-      </dl>
-      <p class="foot">If you are unwell or worried, contact your GP or NHS&nbsp;111.<br>In an emergency, call 999.</p>
-    </div>
-
     <div class="scan">
       <img src="../qr/prehab-hub-oxblood.svg" alt="QR code to bagouri.uk/prehab">
-      <p class="cap">Preparing for<br>your operation</p>
-      <p class="url">bagouri.uk/prehab</p>
+    </div>
+    <div class="details">
+      <p class="sec">Miss Evy Sennett</p>
+      <p class="lede">For any questions or queries regarding your appointment or procedure at Mid Yorks NHS Trust</p>
+      <p class="kv"><b>Email:</b> evy.sennett@nhs.net</p>
+      <p class="kv"><b>Tel:</b> 01924 543584</p>
+      <div class="div"></div>
+      <p class="note">For radiology, physiotherapy and waiting list queries, please contact the appropriate department via the hospital switchboard on: <b>01924 541169</b></p>
+      <div class="div"></div>
+      <p class="note">For the pre-habilitation program and information about your procedure, please scan the QR code on the left with your smartphone camera &amp; click on the link.</p>
     </div>
   </div>
   <div class="card back">
-    <div class="details">
-      <p class="eyebrow">NHS patients</p>
-      <dl>
-        <dt>Appointments &amp; admission</dt>
-        <dd>
-          Evy Sennett, secretary<br>
-          <span class="tel">01924 543584</span><br>
-          <span class="em">evy.sennett@nhs.net</span>
-        </dd>
-        <dt>Exercises &amp; prehab</dt>
-        <dd>
-          Physiotherapy &middot; <span class="tel">01977 747391</span><br>
-          <span class="em">or message the team through PKB</span>
-        </dd>
-      </dl>
-      <p class="foot">If you are unwell or worried, contact your GP or NHS&nbsp;111.<br>In an emergency, call 999.</p>
-    </div>
-
     <div class="scan">
       <img src="../qr/prehab-hub-oxblood.svg" alt="QR code to bagouri.uk/prehab">
-      <p class="cap">Preparing for<br>your operation</p>
-      <p class="url">bagouri.uk/prehab</p>
+    </div>
+    <div class="details">
+      <p class="sec">Miss Evy Sennett</p>
+      <p class="lede">For any questions or queries regarding your appointment or procedure at Mid Yorks NHS Trust</p>
+      <p class="kv"><b>Email:</b> evy.sennett@nhs.net</p>
+      <p class="kv"><b>Tel:</b> 01924 543584</p>
+      <div class="div"></div>
+      <p class="note">For radiology, physiotherapy and waiting list queries, please contact the appropriate department via the hospital switchboard on: <b>01924 541169</b></p>
+      <div class="div"></div>
+      <p class="note">For the pre-habilitation program and information about your procedure, please scan the QR code on the left with your smartphone camera &amp; click on the link.</p>
     </div>
   </div>
 </div>
