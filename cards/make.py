@@ -28,11 +28,11 @@ CONFIG = {
     "given_name":  "Elmunzar",
     "family_name": "Bagouri",
     # As it should print, e.g. "Mr Elmunzar Bagouri" - title matters for surgeons.
-    "display_name": None,
+    "display_name": "Mr Elmunzar Bagouri",
     # e.g. "MBBS, FRCS (Tr&Orth)"
-    "post_nominals": None,
+    "post_nominals": "MBBS, CCT, MBA, FRCS (Tr&Orth)",
     # e.g. "Consultant Orthopaedic Surgeon"
-    "job_title": None,
+    "job_title": "Consultant Trauma and Lower Limb Arthroplasty Surgeon",
     # e.g. "Hip and knee replacement"
     "subspecialty": None,
     # e.g. ["Mid Yorkshire Teaching NHS Trust", "Spire Methley Park Hospital"]
@@ -41,7 +41,7 @@ CONFIG = {
     # Known and confirmed.
     "secretary_name": "Evy Sennett",
     "secretary_tel":  "01924 543584",
-    "private_tel":    "01977 518518",
+    "private_tel":    "01977 518518",   # Spire Methley Park - the PRIVATE route
     "email":          "enquiries@bagouri.uk",
     "website":        "bagouri.uk",
     "prehab_url":     "https://bagouri.uk/prehab/",
@@ -78,11 +78,11 @@ def build_vcard():
         # in Apple Contacts, and the NOTE repeats both for everything else.
         f"TEL;TYPE=WORK,VOICE;PREF=1:{CONFIG['secretary_tel']}",
         f"item1.TEL;TYPE=WORK,VOICE:{CONFIG['private_tel']}",
-        "item1.X-ABLabel:Private (Spire Methley Park)",
+        "item1.X-ABLabel:Private - Spire Methley Park",
         f"EMAIL;TYPE=WORK,INTERNET:{CONFIG['email']}",
         f"URL:https://{CONFIG['website']}",
-        (f"NOTE:NHS secretary ({CONFIG['secretary_name']}) {CONFIG['secretary_tel']}. "
-         f"Private (Spire Methley Park) {CONFIG['private_tel']}. "
+        (f"NOTE:NHS patients - secretary ({CONFIG['secretary_name']}) {CONFIG['secretary_tel']}. "
+         f"Private patients - Spire Methley Park {CONFIG['private_tel']}. "
          f"Prehabilitation guides for patients: {CONFIG['prehab_url']}"),
         "END:VCARD",
     ]

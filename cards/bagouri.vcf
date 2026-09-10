@@ -1,13 +1,13 @@
 BEGIN:VCARD
 VERSION:3.0
 N:Bagouri;Elmunzar;;;
-FN:[display name]
-TITLE:[job title]
+FN:Mr Elmunzar Bagouri
+TITLE:Consultant Trauma and Lower Limb Arthroplasty Surgeon
 ORG:[hospitals]
 TEL;TYPE=WORK,VOICE;PREF=1:01924 543584
 item1.TEL;TYPE=WORK,VOICE:01977 518518
-item1.X-ABLabel:Private (Spire Methley Park)
+item1.X-ABLabel:Private - Spire Methley Park
 EMAIL;TYPE=WORK,INTERNET:enquiries@bagouri.uk
 URL:https://bagouri.uk
-NOTE:NHS secretary (Evy Sennett) 01924 543584. Private (Spire Methley Park) 01977 518518. Prehabilitation guides for patients: https://bagouri.uk/prehab/
+NOTE:NHS patients - secretary (Evy Sennett) 01924 543584. Private patients - Spire Methley Park 01977 518518. Prehabilitation guides for patients: https://bagouri.uk/prehab/
 END:VCARD

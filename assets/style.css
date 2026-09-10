@@ -173,3 +173,15 @@ form.fb button[type=submit][disabled]{opacity:.55;cursor:default}
   .contact dd,.contact dd a,.contact .small{color:#000}
   .contact .urgent{border-top-color:#999}
 }
+
+/* ---------- contact: explicit NHS / private division ---------- */
+.contact .group{margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.22)}
+.contact .group:first-of-type{margin-top:12px;padding-top:0;border-top:0}
+.contact .grouphead{display:block;font-size:15.5px;font-weight:800;color:#fff;letter-spacing:.02em;margin-bottom:2px}
+.contact .groupnote{display:block;font-size:14.5px;color:#A9C0E8;margin-bottom:8px}
+.contact .group dl{margin:0}
+@media print{
+  .contact .group{border-top-color:#999}
+  .contact .grouphead{color:#000}
+  .contact .groupnote{color:#333}
+}
