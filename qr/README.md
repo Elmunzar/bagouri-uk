@@ -108,3 +108,26 @@ underneath them.
 
 **Do not move them to a link shortener or a QR service**, however convenient the
 analytics look. That is the failure this replaced.
+
+## Recolouring a code
+
+What matters is **contrast between the dark modules and the light ground**, not the hue.
+Measured against the card's cream `#FCF0DB`:
+
+| colour | contrast | verdict |
+|---|---|---|
+| navy `#13264A` | 13.3:1 | excellent |
+| card green `#1A321B` | 12.3:1 | excellent |
+| card maroon `#931D1F` | ~8:1 | good |
+| mid brown `#8B5A3C` | 5.1:1 | workable, no lower |
+
+Rules of thumb:
+
+- Stay at **7:1 or better**. Below about 4.5:1, scanning gets unreliable in poor light,
+  which is exactly the condition a patient in a clinic corridor is in.
+- **Never invert** — light modules on a dark ground defeats a lot of scanners.
+- **Keep the quiet zone** the same light colour as the surrounding card.
+- Avoid pure red if anything might ever read it with a laser scanner; a red-light laser
+  sees red ink as no contrast. Phone cameras are unaffected.
+- **Decode the recoloured file before sending it to print.** Every variant in this folder
+  was decoded after recolouring, not assumed.
