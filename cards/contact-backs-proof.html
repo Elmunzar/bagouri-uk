@@ -1,0 +1,66 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8">
+<meta name="robots" content="noindex"><title>backs</title>
+<style>
+  :root{
+    --paper:#FCF0DB; --ink:#2B2B2B; --muted:#6A5F5A;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#E8E3DF;font-family:var(--sans);color:var(--ink)}
+  .sheet{width:210mm;height:297mm;margin:0 auto 8mm;background:#fff;padding:11mm 20mm;
+         display:grid;grid-template-columns:85mm 85mm;grid-auto-rows:55mm;
+         justify-content:center;align-content:start}
+  .card{width:85mm;height:55mm;background:var(--paper);
+        outline:.3pt dashed #C9BEB8;outline-offset:-.15pt;padding:4mm;overflow:hidden}
+  .front{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .front .name{font-family:var(--serif);font-size:14pt;line-height:1.1;color:#4C1D0F;margin:0}
+  .front .pn{font-family:var(--serif);font-size:8.2pt;margin:2mm 0 0;letter-spacing:.03em}
+  .front .rule{width:30mm;height:.7pt;opacity:.75;margin:3mm 0}
+  .front .role{font-family:var(--serif);font-size:9pt;line-height:1.25;margin:0}
+  .back{display:flex;gap:3.5mm;align-items:center}
+  .back .scan{width:38mm;flex:none}
+  .back .scan img{width:38mm;height:38mm;display:block}
+  .back .details{flex:1;min-width:0}
+  .back .tag{font-family:var(--sans);font-size:12pt;font-weight:800;letter-spacing:.1em;margin:0 0 1mm}
+  .back .org{font-family:var(--serif);font-size:7.6pt;margin:0 0 1.6mm;line-height:1.2}
+  .back .kv{font-size:6.8pt;line-height:1.45;margin:0}
+  .back .kv b{display:block;font-size:5.6pt;letter-spacing:.09em;text-transform:uppercase;
+              color:var(--muted);font-weight:700;margin-top:1mm}
+  .back .cap{font-size:5.8pt;color:var(--muted);margin:2.4mm 0 0;line-height:1.25}
+  .note{max-width:210mm;margin:0 auto 4mm;padding:0 20mm;font-size:11px;color:#5A5048}
+  @media print{body{background:#fff}.note{display:none}
+    .sheet{margin:0;page-break-after:always}.sheet:last-of-type{page-break-after:auto}
+    @page{size:A4;margin:0}}
+
+ body{background:#DEDAD6;padding:30px;width:760px;font-family:var(--sans)}
+ .pane h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#6A5F5A;margin:0 0 9px;font-weight:700}
+ .scale{transform:scale(2);transform-origin:top left}
+ .holder{width:170mm;height:112mm;overflow:visible}
+ .card{box-shadow:0 6px 20px rgba(60,40,30,.26);outline:none;text-align:left}
+ .stack{display:flex;flex-direction:column;gap:26px}
+</style></head><body><div class="stack">
+<div class="pane"><h2>NHS &mdash; back</h2><div class="holder"><div class="scale">  <div class="card back">
+    <div class="scan"><img src="vcard-nhs-qr.svg" alt="QR code containing NHS contact details"></div>
+    <div class="details">
+      <p class="tag" style="color:#1A321B">NHS</p>
+      <p class="org">Mid Yorks NHS Trust</p>
+      <p class="kv"><b>Secretary</b> Miss Evy Sennett</p>
+      <p class="kv"><b>Tel</b> 01924 543584</p>
+      <p class="kv"><b>Email</b> evy.sennett@nhs.net</p>
+      <p class="cap">Scan to save my contact details</p>
+    </div>
+  </div>
+</div></div></div>
+<div class="pane"><h2>Private &mdash; back</h2><div class="holder"><div class="scale">  <div class="card back">
+    <div class="scan"><img src="vcard-private-qr.svg" alt="QR code containing PRIVATE contact details"></div>
+    <div class="details">
+      <p class="tag" style="color:#931D1F">PRIVATE</p>
+      <p class="org">Spire Methley Park Hospital</p>
+      <p class="kv"><b>Appointments</b> 01977 518518</p>
+      <p class="kv"><b>Email</b> enquiries@bagouri.uk</p>
+      <p class="cap">Scan to save my contact details</p>
+    </div>
+  </div>
+</div></div></div>
+</div></body></html>
