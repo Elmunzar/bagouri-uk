@@ -4,61 +4,90 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Scan for your prehabilitation guide</title>
+<title>Scan — prehabilitation and contact details</title>
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <style>
-  /* Display page. Meant to be opened on a consultation-room screen and shown
-     to the patient, who scans it with their own phone. Deliberately white
-     regardless of the viewer's dark-mode setting: a dark background makes
-     a QR code much harder for a phone camera to lock onto through screen glare. */
-  :root{ color-scheme: light; }
+  /* Display page. Opened on a consultation-room screen and turned toward the
+     patient, who scans with their own phone. This is what gets used when the
+     printed cards have run out.
+
+     Deliberately white regardless of the viewer's dark-mode setting: a dark
+     background makes a QR code much harder for a phone camera to lock onto
+     through screen glare.
+
+     The contact code carries the vCard itself rather than pointing at a page,
+     because on a screen it can be shown large enough that density costs
+     nothing - and it works even where the patient has no signal. That trade
+     goes the other way on a printed card, where size is fixed. */
+  :root{ color-scheme: light; --navy:#13264A; --teal:#0E7C7B; --muted:#4A5568; }
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
-    margin:0;background:#fff;color:#13264A;
+    margin:0;background:#fff;color:var(--navy);
     font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    display:flex;align-items:center;justify-content:center;padding:4vmin;
+    display:flex;align-items:center;justify-content:center;padding:3.5vmin;
   }
-  .stage{text-align:center;max-width:min(92vw,1100px)}
-  .kicker{
-    margin:0 0 1.2vmin;font-size:clamp(13px,1.7vmin,22px);font-weight:700;
-    letter-spacing:.16em;text-transform:uppercase;color:#0E7C7B;
-  }
+  .stage{width:100%;max-width:1500px;text-align:center}
   h1{
-    margin:0 0 3.2vmin;font-weight:700;line-height:1.15;
-    font-size:clamp(22px,4.6vmin,58px);
+    margin:0 0 3.4vmin;font-weight:700;line-height:1.15;
+    font-size:clamp(20px,3.8vmin,46px);
+  }
+  .pair{
+    display:flex;gap:6vmin;align-items:flex-start;justify-content:center;flex-wrap:wrap;
+  }
+  .item{flex:0 1 46%;min-width:min(300px,86vw)}
+  .kicker{
+    margin:0 0 1.6vmin;font-size:clamp(12px,1.6vmin,20px);font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--teal);
   }
   .code{
-    width:min(56vmin,520px);height:min(56vmin,520px);
+    width:min(44vmin,440px);height:min(44vmin,440px);
     margin:0 auto;display:block;
   }
   .url{
-    margin:3vmin 0 0;font-weight:700;line-height:1.1;
-    font-size:clamp(20px,4.2vmin,52px);letter-spacing:.01em;
+    margin:2.2vmin 0 0;font-weight:700;line-height:1.15;
+    font-size:clamp(16px,2.9vmin,34px);
   }
   .how{
-    margin:1.6vmin 0 0;color:#4A5568;
-    font-size:clamp(14px,2.1vmin,26px);
+    margin:1vmin 0 0;color:var(--muted);
+    font-size:clamp(13px,1.8vmin,21px);
   }
-  /* Short screens (a laptop turned to the patient) — shrink the code, not the text. */
-  @media (max-height:520px){
-    .code{width:min(42vmin,320px);height:min(42vmin,320px)}
+  .foot{
+    margin:4vmin 0 0;color:var(--muted);
+    font-size:clamp(12px,1.6vmin,19px);
+  }
+  /* A laptop turned sideways: shrink the codes, keep the words readable. */
+  @media (max-height:560px){
+    .code{width:min(34vmin,260px);height:min(34vmin,260px)}
     h1{margin-bottom:2vmin}
+    .pair{gap:4vmin}
   }
-  @media print{ .how{color:#000} }
 </style>
 </head>
 <body>
   <main class="stage">
-    <p class="kicker">Preparing for surgery</p>
-    <h1>Your joint replacement</h1>
+    <h1>Point your phone camera at a code</h1>
 
-    <img class="code" src="/qr/prehab-hub.svg"
-         alt="QR code linking to bagouri.uk/prehab">
+    <div class="pair">
+      <section class="item">
+        <p class="kicker">Preparing for surgery</p>
+        <img class="code" src="/qr/prehab-hub.svg"
+             alt="QR code linking to bagouri.uk/prehab">
+        <p class="url">bagouri.uk/prehab</p>
+        <p class="how">Your exercises and what to expect</p>
+      </section>
 
-    <p class="url">bagouri.uk/prehab</p>
-    <p class="how">Point your phone camera at the code, or type the address above.</p>
+      <section class="item">
+        <p class="kicker">Contact details</p>
+        <img class="code" src="/qr/contact-nhs.svg"
+             alt="QR code containing Mr Bagouri's NHS contact details">
+        <p class="url">Save my details</p>
+        <p class="how">Secretary, telephone and email</p>
+      </section>
+    </div>
+
+    <p class="foot">If you are unwell or worried, contact your GP or NHS&nbsp;111. In an emergency, call 999.</p>
   </main>
 </body>
 </html>
